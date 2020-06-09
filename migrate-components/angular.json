@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "migrate-components"
+    }
+  },
+  "defaultProject": "migrate-components",
+  "cli": {
+    "analytics": false
+  }
 }
