@@ -1,28 +1,30 @@
-angular.module('app').factory('currentIdentity', function($http, $q) {
+angular.module('app').factory('currentIdentity', function ($http, $q) {
   return {
     currentUser: null,
-    
-    setUser: function(user) {
+
+    setUser: function (user) {
       this.currentUser = user;
     },
-    clearUser: function() {
+    clearUser: function () {
       this.currentUser = null;
     },
-    authenticated: function() {
+    authenticated: function () {
       return !!this.currentUser;
     },
-    updateUser: function(newUserObj) {
+    updateUser: function (newUserObj) {
       var dfd = $q.defer();
-      
-      
-      $http.put('/api/users/' + this.currentUser.id, newUserObj).then(function(response) {
-        this.currentUser.firstName = newUserObj.firstName;
-        this.currentUser.lastName = newUserObj.lastName;
-        dfd.resolve();
-      }.bind(this), function(response) {
-        dfd.reject("Error Logging Out");
-      })
+
+      $http.put('/api/users/' + this.currentUser.id, newUserObj).then(
+        function (response) {
+          this.currentUser.firstName = newUserObj.firstName;
+          this.currentUser.lastName = newUserObj.lastName;
+          dfd.resolve();
+        }.bind(this),
+        function (response) {
+          dfd.reject('Error Logging Out');
+        }
+      );
       return dfd.promise;
-    }
-  }
+    },
+  };
 });
