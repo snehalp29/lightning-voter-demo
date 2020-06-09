@@ -7,7 +7,13 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "postinstall:bak": "",
+    "postinstall": "ngcc",
+    "build:externals": "ng build --extra-webpack-config webpack.externals.js --prod --single-bundle",
+    "build:migrate-components:externals": "ng build --extra-webpack-config webpack.externals.js --prod --project migrate-components --single-bundle",
+    "cpd": "ncp ./dist/migrate-components ../public/migrate-components",
+    "update": "npm run build:externals && npm run cpd"
   },
   "private": true,
   "dependencies": {
@@ -15,10 +21,16 @@
     "@angular/common": "~9.1.6",
     "@angular/compiler": "~9.1.6",
     "@angular/core": "~9.1.6",
+    "@angular/elements": "^9.1.9",
     "@angular/forms": "~9.1.6",
     "@angular/platform-browser": "~9.1.6",
     "@angular/platform-browser-dynamic": "~9.1.6",
     "@angular/router": "~9.1.6",
+    "@webcomponents/webcomponentsjs": "^2.4.3",
+    "copy-dir": "^1.3.0",
+    "document-register-element": "^1.14.3",
+    "ncp": "^2.0.0",
+    "ngx-build-plus": "^9.0.6",
     "rxjs": "~6.5.4",
     "tslib": "^1.10.0",
     "zone.js": "~0.10.2"
