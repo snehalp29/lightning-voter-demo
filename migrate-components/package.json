@@ -12,8 +12,9 @@
     "postinstall": "ngcc",
     "build:externals": "ng build --extra-webpack-config webpack.externals.js --prod --single-bundle",
     "build:migrate-components:externals": "ng build --extra-webpack-config webpack.externals.js --prod --project migrate-components --single-bundle",
-    "cpd": "ncp ./dist/migrate-components ../public/migrate-components",
-    "update": "npm run build:externals && npm run cpd"
+    "cpd": "rimraf ../public/migrate-components && ncp ./dist/migrate-components ../public/migrate-components",
+    "update": "npm run build:externals && npm run cpd",
+    "del": "rimraf ../public/migrate-components"
   },
   "private": true,
   "dependencies": {
@@ -31,6 +32,7 @@
     "document-register-element": "^1.14.3",
     "ncp": "^2.0.0",
     "ngx-build-plus": "^9.0.6",
+    "rimraf": "^3.0.2",
     "rxjs": "~6.5.4",
     "tslib": "^1.10.0",
     "zone.js": "~0.10.2"
