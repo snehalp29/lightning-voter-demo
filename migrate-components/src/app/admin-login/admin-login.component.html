@@ -1,1 +1,33 @@
-<p>admin-login works!</p>
+<h1>Admin Login</h1>
+<form class="form" novalidate [formGroup]="loginForm" (ngSubmit)="login()">
+  <div class="row">
+    <div class="form-group col-sm-6">
+      <input
+        type="text"
+        autofocus
+        placeholder="Email Address"
+        formControlName="username"
+        class="form-control"
+      />
+    </div>
+  </div>
+  <div class="row">
+    <div class="form-group col-sm-6">
+      <input
+        type="password"
+        placeholder="Password"
+        formControlName="password"
+        class="form-control"
+      />
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-6">
+      <button class="btn btn-primary">Login</button>
+    </div>
+  </div>
+</form>
+
+<p>
+  {{ loginForm.value | json }}
+</p>
