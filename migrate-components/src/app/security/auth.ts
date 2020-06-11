@@ -12,7 +12,7 @@ export class AuthService {
   baseUrl = '/api/login';
   constructor() {}
 
-  login(credentials): Promise<Response> {
+  login(credentials: any): Promise<Response> {
     return fetch(`${this.baseUrl}`, { method: 'POST', body: credentials });
   }
 

@@ -9,7 +9,7 @@ import { NgAuthService } from '../security/ng-auth.service';
 })
 export class AdminLoginComponent implements OnInit {
   model: AdminModel = new AdminModel();
-  loginForm: FormGroup;
+  loginForm: FormGroup = new FormGroup({});
 
   constructor(private fb: FormBuilder, private ngAuthService: NgAuthService) {}
 
