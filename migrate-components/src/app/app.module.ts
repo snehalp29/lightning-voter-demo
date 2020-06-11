@@ -4,13 +4,15 @@ import { createCustomElement } from '@angular/elements';
 
 import { AppComponent } from './app.component';
 import { AdminLoginComponent } from './admin-login/admin-login.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
-  declarations: [AppComponent],
-  imports: [BrowserModule],
+  declarations: [AppComponent, AdminLoginComponent],
+  imports: [BrowserModule, ReactiveFormsModule, HttpClientModule],
   providers: [],
-  bootstrap: [AppComponent],
-  entryComponents: [AdminLoginComponent],
+  bootstrap: [],
+  entryComponents: [AppComponent, AdminLoginComponent],
 })
 export class AppModule {
   constructor(public injector: Injector) {}
