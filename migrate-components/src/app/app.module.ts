@@ -6,11 +6,18 @@ import { AppComponent } from './app.component';
 import { AdminLoginComponent } from './admin-login/admin-login.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { RouterModule } from '@angular/router';
+import { APP_BASE_HREF } from '@angular/common';
 
 @NgModule({
   declarations: [AppComponent, AdminLoginComponent],
-  imports: [BrowserModule, ReactiveFormsModule, HttpClientModule],
-  providers: [],
+  imports: [
+    BrowserModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+    RouterModule.forRoot([]),
+  ],
+  providers: [{ provide: APP_BASE_HREF, useValue: '/' }],
   bootstrap: [],
   entryComponents: [AppComponent, AdminLoginComponent],
 })
