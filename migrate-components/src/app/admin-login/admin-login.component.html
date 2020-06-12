@@ -1,4 +1,7 @@
-<h1>Admin Login</h1>
+<h1 *ngIf="title; else defaultTitle">{{ title }}</h1>
+<ng-template #defaultTitle>
+  <h1>Admin Login</h1>
+</ng-template>
 <form class="form" novalidate [formGroup]="loginForm" (ngSubmit)="login()">
   <div class="row">
     <div class="form-group col-sm-6">

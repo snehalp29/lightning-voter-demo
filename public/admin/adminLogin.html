@@ -29,4 +29,8 @@
   </div>
 </form>
 
-<admin-login-el></admin-login-el>
+<admin-login-el
+  ng-custom-element
+  ngce-prop-title="$ctrl.pagetitle"
+  ngce-on-userauth="$ctrl.handleauth($event)"
+></admin-login-el>
