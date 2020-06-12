@@ -20,6 +20,7 @@
     "express": "^4.13.4",
     "express-session": "^1.13.0",
     "morgan": "^1.7.0",
+    "ng-custom-element": "^2.0.3",
     "passport": "^0.3.2",
     "passport-local": "^1.0.0"
   },
