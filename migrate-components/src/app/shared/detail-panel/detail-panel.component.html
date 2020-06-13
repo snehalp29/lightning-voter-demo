@@ -1,0 +1,13 @@
+<div class="card card-primary panel panel-primary">
+  <div class="card-heading pointable panel-heading" (click)="collapse()">
+    <span>{{ title }}</span>
+  </div>
+  <div class="card-body panel-body" [hidden]="collapsed">
+    <strong>{{ voteCount }} votes</strong>
+    <p>{{ length | talkDuration }}</p>
+    <p>
+      <small>{{ abstract }}</small>
+    </p>
+    <ng-content></ng-content>
+  </div>
+</div>
