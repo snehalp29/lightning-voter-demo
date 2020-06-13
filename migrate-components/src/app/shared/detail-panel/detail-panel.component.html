@@ -3,9 +3,9 @@
     <span>{{ title }}</span>
   </div>
   <div class="card-body panel-body" [hidden]="collapsed">
-    <strong>{{ voteCount }} votes</strong>
-    <p>{{ length | talkDuration }}</p>
-    <p>
+    <strong *ngIf="voteCount">{{ voteCount }} votes</strong>
+    <p *ngIf="length">{{ length | talkDuration }}</p>
+    <p *ngIf="abstract">
       <small>{{ abstract }}</small>
     </p>
     <ng-content></ng-content>
