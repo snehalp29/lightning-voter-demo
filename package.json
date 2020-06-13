@@ -4,7 +4,7 @@
   "description": "lightning talk voting app",
   "main": "index.js",
   "scripts": {
-    "start": "node ./server/server.js",
+    "start": "nodemon ./server/server.js",
     "dev": "nodemon ./server/server.js -w ./server",
     "test": "karma start"
   },
@@ -21,6 +21,7 @@
     "express-session": "^1.13.0",
     "morgan": "^1.7.0",
     "ng-custom-element": "^2.0.3",
+    "nodemon": "^2.0.4",
     "passport": "^0.3.2",
     "passport-local": "^1.0.0"
   },
