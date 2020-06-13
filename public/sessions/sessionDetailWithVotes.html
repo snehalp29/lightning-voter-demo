@@ -1,5 +1,20 @@
-<detail-panel collapsed="{{vm.initialCollapsed}}" title="{{vm.session.title}}">
+<!-- <detail-panel collapsed="{{vm.initialCollapsed}}" title="{{vm.session.title}}">
   <strong>{{vm.session.voteCount}} votes</strong>
   <p>{{vm.session.length | talkDuration}}</p>
-  <p><small>{{vm.session.abstract}}</small></p>  
-</detail-panel>
+  <p><small>{{vm.session.abstract}}</small></p>
+</detail-panel> -->
+
+<!-- detail panel {{vm}} -->
+<detail-panel-el
+  ng-custom-element
+  ngce-prop-collapsed="vm.initialCollapsed"
+  ngce-prop-title="vm.session.title"
+  ngce-prop-vote_count="vm.session.voteCount"
+  ngce-prop-length="vm.session.length"
+  ngce-prop-abstract="vm.session.abstract"
+>
+  <!-- 
+  <strong>{{vm.session.voteCount}} votes</strong>
+  <p>{{vm.session.voteCount | talkDuration}}</p>
+  <p><small>{{vm.session.abstract}}</small></p> -->
+</detail-panel-el>
