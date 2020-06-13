@@ -1,5 +1,10 @@
 <nav></nav>
 <h1>Results</h1>
 
-<session-detail-with-votes session="session" ng-repeat="session in vm.sessionsByVoteDesc"></session-detail-with-votes>
+<session-detail-with-votes-el
+  ng-custom-element
+  ngce-prop-session="session"
+  ng-repeat="session in vm.sessionsByVoteDesc"
+></session-detail-with-votes-el>
 
+<!-- ngce-prop-initial_collapsed="false" -->
