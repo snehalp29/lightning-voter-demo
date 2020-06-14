@@ -21,12 +21,19 @@ import {
   UserDetailsComponent,
   UserListComponent,
 } from './admin';
+import {
+  HomeModule,
+  HomeComponent,
+  CreateNewSessionComponent,
+  UnreviewedTalkComponent,
+} from './home';
 
 @NgModule({
   declarations: [AppComponent],
   imports: [
     BrowserModule,
     ReactiveFormsModule,
+    HomeModule,
     AdminModule,
     SharedModule,
     ResultsModule,
@@ -47,6 +54,11 @@ export class AppModule {
       [UserDetailsComponent, 'user-details-el'],
       [UserListComponent, 'user-list-el'],
       [ResultsComponent, 'results-el'],
+      /* Home  */
+      [HomeComponent, 'home-el'],
+      [CreateNewSessionComponent, 'create-new-session-el'],
+      [UnreviewedTalkComponent, 'unreviewed-talk-el'],
+
       [SessionDetailWithVotesComponent, 'session-detail-with-votes-el'],
       [SessionDetailComponent, 'session-detail-el'],
       [DetailPanelComponent, 'detail-panel-el'],
