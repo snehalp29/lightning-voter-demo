@@ -1,1 +1,19 @@
-<p>create-users works!</p>
+<nav></nav>
+<h1>Create Users CE</h1>
+<p>
+  Enter Email Addresses here. One on each line, First and Last Name Pipe
+  Separated
+</p>
+<form [formGroup]="userForm">
+  <textarea
+    name="emailAddresses"
+    id=""
+    cols="30"
+    rows="10"
+    class="form-control"
+    placeholder="Email Addresses"
+    formControlName="namesblob"
+  ></textarea>
+  <br />
+  <button class="btn btn-primary" (click)="import()">Create Users</button>
+</form>

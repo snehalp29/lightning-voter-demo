@@ -62,9 +62,7 @@ app.config(function ($routeProvider) {
       },
     })
     .when('/admin/createusers', {
-      controller: 'createUsersCtrl',
-      templateUrl: 'admin/createUsers.html',
-      controllerAs: 'vm',
+      template: '<create-users-el ng-custom-element></create-users-el>',
       resolve: {
         admin: routeResolvers.requireAdmin,
       },
