@@ -3,7 +3,6 @@ import { NgModule, Injector } from '@angular/core';
 import { createCustomElement } from '@angular/elements';
 
 import { AppComponent } from './app.component';
-import { AdminLoginComponent } from './admin-login/admin-login.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
@@ -15,12 +14,15 @@ import {
   SessionDetailComponent,
 } from './results';
 import { SharedModule, DetailPanelComponent } from './shared';
+import { AdminModule } from './admin/admin.module';
+import { AdminLoginComponent } from './admin';
 
 @NgModule({
-  declarations: [AppComponent, AdminLoginComponent],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
     ReactiveFormsModule,
+    AdminModule,
     SharedModule,
     ResultsModule,
     HttpClientModule,
@@ -28,7 +30,7 @@ import { SharedModule, DetailPanelComponent } from './shared';
   ],
   providers: [{ provide: APP_BASE_HREF, useValue: '/' }],
   bootstrap: [],
-  entryComponents: [AppComponent, AdminLoginComponent],
+  entryComponents: [AppComponent],
 })
 export class AppModule {
   constructor(public injector: Injector) {}

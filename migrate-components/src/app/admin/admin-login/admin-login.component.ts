@@ -9,7 +9,7 @@ import {
 } from '@angular/core';
 import { AdminModel } from './admin-model';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { NgAuthService } from '../security/ng-auth.service';
+import { NgAuthService } from '../../security/ng-auth.service';
 import { Router } from '@angular/router';
 @Component({
   selector: 'app-admin-login',
