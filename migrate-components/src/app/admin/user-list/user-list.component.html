@@ -1,1 +1,12 @@
-<p>user-list works!</p>
+<nav></nav>
+<h1>User List CE</h1>
+
+<a
+  [href]="'#/admin/users/' + user.id"
+  zoom-in
+  class="btn btn-primary btn-spaced"
+  *ngFor="let user of allUsers"
+>
+  {{ user.firstName }}
+  {{ user.lastName }}
+</a>
