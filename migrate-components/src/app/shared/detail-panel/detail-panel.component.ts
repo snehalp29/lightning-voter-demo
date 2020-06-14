@@ -6,7 +6,17 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./detail-panel.component.css'],
 })
 export class DetailPanelComponent implements OnInit {
-  @Input() collapsed: boolean = false;
+  _collapsed: boolean = false;
+
+  public get collapsed(): boolean {
+    return this._collapsed;
+  }
+
+  @Input()
+  public set collapsed(v: boolean) {
+    this._collapsed = v;
+  }
+
   @Input() title: string = '';
   @Input() voteCount: number = 0;
   @Input() length: number = 0;
@@ -18,5 +28,6 @@ export class DetailPanelComponent implements OnInit {
 
   collapse() {
     this.collapsed = !this.collapsed;
+    console.log('collapse', this.collapsed);
   }
 }
