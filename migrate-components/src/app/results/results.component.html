@@ -1,8 +1,8 @@
 <nav></nav>
 <h1>Results</h1>
 
-<!-- <session-detail-with-votes
-  session="session"
-  ng-repeat="session in vm.sessionsByVoteDesc"
+<app-session-detail-with-votes
+  [session]="session"
+  *ngFor="let session of sessionsByVoteDesc"
 >
-</session-detail-with-votes> -->
+</app-session-detail-with-votes>

@@ -36,9 +36,8 @@ app.config(function ($routeProvider) {
       },
     })
     .when('/admin/results', {
-      controller: 'resultsCtrl',
-      templateUrl: 'admin/results.html',
-      controllerAs: 'vm',
+      template:
+        '<results-el ng-custom-element ngce-prop-sessions_by_vote_desc="$resolve.allSessions"></results-el>',
       resolve: {
         admin: routeResolvers.requireAdmin,
         allSessions: routeResolvers.allSessions,
