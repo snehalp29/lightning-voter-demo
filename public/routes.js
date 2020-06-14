@@ -44,9 +44,8 @@ app.config(function ($routeProvider) {
       },
     })
     .when('/admin/users/:id', {
-      controller: 'userDetailsCtrl',
-      templateUrl: 'admin/userDetails.html',
-      controllerAs: 'vm',
+      template:
+        '<user-details-el ng-custom-element ngce-prop-all_users="$resolve.allUsers"></user-details-el>',
       resolve: {
         admin: routeResolvers.requireAdmin,
         allUsers: routeResolvers.allUsers,
