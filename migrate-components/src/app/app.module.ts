@@ -15,7 +15,12 @@ import {
 } from './results';
 import { SharedModule, DetailPanelComponent } from './shared';
 import { AdminModule } from './admin/admin.module';
-import { AdminLoginComponent } from './admin';
+import {
+  AdminLoginComponent,
+  CreateUsersComponent,
+  UserDetailsComponent,
+  UserListComponent,
+} from './admin';
 
 @NgModule({
   declarations: [AppComponent],
@@ -38,6 +43,9 @@ export class AppModule {
   ngDoBootstrap() {
     const elements: any[] = [
       [AdminLoginComponent, 'admin-login-el'],
+      [CreateUsersComponent, 'create-users-el'],
+      [UserDetailsComponent, 'user-details-el'],
+      [UserListComponent, 'user-list-el'],
       [ResultsComponent, 'results-el'],
       [SessionDetailWithVotesComponent, 'session-detail-with-votes-el'],
       [SessionDetailComponent, 'session-detail-el'],
