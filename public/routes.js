@@ -66,9 +66,8 @@ app.config(function ($routeProvider) {
       },
     })
     .when('/home', {
-      controller: 'homeCtrl',
-      templateUrl: 'home/home.html',
-      controllerAs: 'vm',
+      template:
+        '<home-el ng-custom-element ngce-prop-user_sessions="$resolve.userSessions"></home-el>',
       resolve: {
         login: routeResolvers.loggedIn,
         userSessions: routeResolvers.userSessions,

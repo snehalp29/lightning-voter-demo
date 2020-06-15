@@ -28,6 +28,6 @@ export class DetailPanelComponent implements OnInit {
 
   collapse() {
     this.collapsed = !this.collapsed;
-    console.log('collapse', this.collapsed);
+    // console.log('collapse', this.collapsed);
   }
 }

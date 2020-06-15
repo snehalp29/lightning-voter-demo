@@ -1,1 +1,22 @@
-<p>home works!</p>
+<nav></nav>
+
+<h2 style="margin-top: 30px;">Unreviewed Sessions CE</h2>
+<app-unreviewed-talk
+  [session]="currentSessionToReview"
+  (voteNo)="voteNo()"
+  (voteYes)="voteYes()"
+></app-unreviewed-talk>
+<hr style="margin-top: 20px;" />
+<h3>
+  Your Sessions CE
+  <a zoom-in class="btn btn-primary btn-xs" href="#/createsession"
+    >Create a New Session</a
+  >
+</h3>
+
+<div *ngFor="let session of userSessions">
+  <app-session-detail
+    [session]="session"
+    [initialCollapsed]="true"
+  ></app-session-detail>
+</div>

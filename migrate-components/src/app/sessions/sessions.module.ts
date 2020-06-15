@@ -12,6 +12,7 @@ import { SharedModule } from '../shared';
     SessionDetailWithVotesComponent,
   ],
   imports: [CommonModule, SharedModule],
+  exports: [SessionDetailComponent],
   entryComponents: [
     ResultsComponent,
     SessionDetailComponent,
