@@ -1,5 +1,4 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Session } from '../session';
 
 @Component({
   selector: 'app-session-detail',
@@ -7,9 +6,9 @@ import { Session } from '../session';
   styleUrls: ['./session-detail.component.css'],
 })
 export class SessionDetailComponent implements OnInit {
-  @Input() initialCollapsed: boolean = false;
+  @Input() session: any;
+  @Input() initialCollapsed: any;
 
-  @Input() session: Session = new Session();
   constructor() {}
 
   ngOnInit(): void {}

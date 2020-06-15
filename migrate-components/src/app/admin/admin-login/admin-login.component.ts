@@ -9,8 +9,8 @@ import {
 } from '@angular/core';
 import { AdminModel } from './admin-model';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { NgAuthService } from '../../security/ng-auth.service';
 import { Router } from '@angular/router';
+import { AuthService } from 'src/app/security/auth.service';
 @Component({
   selector: 'app-admin-login',
   templateUrl: './admin-login.component.html',
@@ -24,7 +24,7 @@ export class AdminLoginComponent implements OnInit, OnChanges {
 
   constructor(
     private fb: FormBuilder,
-    private ngAuthService: NgAuthService,
+    private authService: AuthService,
     private router: Router
   ) {}
   ngOnChanges(changes: SimpleChanges): void {
@@ -39,7 +39,7 @@ export class AdminLoginComponent implements OnInit, OnChanges {
   }
 
   login() {
-    this.ngAuthService.login(this.loginForm.value).subscribe(
+    this.authService.login(this.loginForm.value).subscribe(
       () => {
         console.log('user authenticated successfully');
         this.userauth.next(true);

@@ -7,12 +7,6 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { APP_BASE_HREF } from '@angular/common';
-import {
-  ResultsModule,
-  ResultsComponent,
-  SessionDetailWithVotesComponent,
-  SessionDetailComponent,
-} from './results';
 import { SharedModule, DetailPanelComponent } from './shared';
 import { AdminModule } from './admin/admin.module';
 import {
@@ -27,6 +21,12 @@ import {
   CreateNewSessionComponent,
   UnreviewedTalkComponent,
 } from './home';
+import {
+  ResultsComponent,
+  SessionsModule,
+  SessionDetailWithVotesComponent,
+  SessionDetailComponent,
+} from './sessions';
 
 @NgModule({
   declarations: [AppComponent],
@@ -35,8 +35,8 @@ import {
     ReactiveFormsModule,
     HomeModule,
     AdminModule,
+    SessionsModule,
     SharedModule,
-    ResultsModule,
     HttpClientModule,
     RouterModule.forRoot([]),
   ],
@@ -54,11 +54,11 @@ export class AppModule {
       [UserDetailsComponent, 'user-details-el'],
       [UserListComponent, 'user-list-el'],
       [ResultsComponent, 'results-el'],
-      /* Home  */
+      /* Home Module  */
       [HomeComponent, 'home-el'],
       [CreateNewSessionComponent, 'create-new-session-el'],
       [UnreviewedTalkComponent, 'unreviewed-talk-el'],
-
+      /* Session Module  */
       [SessionDetailWithVotesComponent, 'session-detail-with-votes-el'],
       [SessionDetailComponent, 'session-detail-el'],
       [DetailPanelComponent, 'detail-panel-el'],

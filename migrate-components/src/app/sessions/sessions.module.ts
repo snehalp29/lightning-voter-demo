@@ -1,22 +1,21 @@
-import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SessionDetailComponent } from './session-detail/session-detail.component';
-import { SharedModule } from '../shared/shared.module';
 import { SessionDetailWithVotesComponent } from './session-detail-with-votes/session-detail-with-votes.component';
-import { ResultsComponent } from './results.component';
+import { ResultsComponent } from './results/results.component';
+import { SharedModule } from '../shared';
 
 @NgModule({
   declarations: [
+    ResultsComponent,
     SessionDetailComponent,
     SessionDetailWithVotesComponent,
-    ResultsComponent,
   ],
   imports: [CommonModule, SharedModule],
-  // schemas: [CUSTOM_ELEMENTS_SCHEMA],
   entryComponents: [
+    ResultsComponent,
     SessionDetailComponent,
     SessionDetailWithVotesComponent,
-    ResultsComponent,
   ],
 })
-export class ResultsModule {}
+export class SessionsModule {}
